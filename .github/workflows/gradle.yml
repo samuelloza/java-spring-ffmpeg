@@ -25,10 +25,10 @@ jobs:
       - name: Test Coverage Upload
         uses: actions/upload-artifact@v2
         with:
-        name: TestCoverage
-        path: build/reports/jacoco/test/html/
+         name: TestCoverage
+         path: build/reports/jacoco/test/html/
       - name: Build
         uses: actions/upload-artifact@v2
         with:
-        name: Build
-        path: build/distributions/
+         name: Build
+         path: build/distributions/
