@@ -16,3 +16,19 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Style Code Report
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: CheckStyle
+          path: build/reports/checkstyle/
+      - name: Test Coverage Upload
+        uses: actions/upload-artifact@v2
+        with:
+        name: TestCoverage
+        path: build/reports/jacoco/test/html/
+      - name: Build
+        uses: actions/upload-artifact@v2
+        with:
+        name: Build
+        path: build/distributions/
